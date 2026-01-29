@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* DEFAULT THEME (Premium Dark - #0B1020) */
+    --background: 226 49% 8%;
+    --foreground: 228 24% 92%;
+    --card: 228 37% 13%;
+    --card-foreground: 228 24% 92%;
+    --popover: 228 37% 13%;
+    --popover-foreground: 228 24% 92%;
+    --primary: 234 100% 68%;
+    --primary-foreground: 228 24% 98%;
+    --secondary: 228 37% 18%;
+    --secondary-foreground: 228 24% 92%;
+    --muted: 228 37% 18%;
+    --muted-foreground: 233 21% 56%;
+    --accent: 235 86% 65%;
+    --accent-foreground: 228 24% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 37% 20%;
+    --input: 228 37% 20%;
+    --ring: 234 100% 68%;
+    --radius: 1.25rem;
+  }
+
+  /* BLACK THEME */
+  .theme-black {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
+    --border: 0 0% 12%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --secondary: 0 0% 10%;
+  }
+
+  /* LIGHT THEME */
+  .theme-light {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --secondary: 210 40% 96%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+  }
+
+  /* BLUE LIGHT THEME */
+  .theme-blue-light {
+    --background: 225 100% 98%;
+    --foreground: 234 50% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 234 50% 15%;
+    --border: 225 100% 92%;
+    --muted: 225 100% 96%;
+    --muted-foreground: 234 20% 50%;
+    --secondary: 225 100% 95%;
+    --primary: 234 100% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
